@@ -1,0 +1,1 @@
+<h1>There's no post</h1>

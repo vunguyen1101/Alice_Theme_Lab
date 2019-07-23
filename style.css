@@ -1,0 +1,336 @@
+@charset "UTF-8";
+/*
+Theme Name: Alice Theme
+Theme URI: https://wordpress.org/themes/twentynineteen/
+Author: Vu Nguyen
+Author URI: https://wordpress.org/
+Description: Our 2019 default theme is designed to show off the power of the block editor. It features custom styles for all the default blocks, and is built so that what you see in the editor looks like what you'll see on your website. Twenty Nineteen is designed to be adaptable to a wide range of websites, whether you’re running a photo blog, launching a new business, or supporting a non-profit. Featuring ample whitespace and modern sans-serif headlines paired with classic serif body text, it's built to be beautiful on all screen sizes.
+Requires at least: WordPress 4.9.6
+Version: 1.4
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: alice
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready
+
+*/
+
+/* style iframe */
+
+
+
+/*-----------------------------------------------------Header-------------------------------------*/ 
+.ultimate-tittle{
+    text-transform: uppercase;
+}
+.search-field{
+    border:none;
+    border-bottom: 2px solid #46607f;
+    line-height: 30px;
+    padding-left: 20px;
+
+}
+.search-form{
+    display: none;
+}
+
+.media .social-menu ul li {
+    display: inline-block;  
+}
+.media .social-menu ul{
+    margin: 0;
+    padding: 0;
+}
+.main-menu{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.main-menu ul li > ul {
+    width: 100%;
+    position: absolute;
+    left:0 ;
+    padding: 0;
+    margin: 0;
+    background-color: #ffffff;
+    text-align: center;
+    line-height: 50px;
+    display: none;
+}
+.main-menu ul li a:hover{
+    color: #238ee1 !important;
+    
+}
+.main-menu ul li > ul li  {
+    margin: 0 50px !important;
+    display: inline-block;
+}
+.main-menu ul li:hover > ul {
+    display: block;
+    background-color: #46607f;
+}
+#homeindexlink {
+    text-decoration: none !important;
+    color: #ffffff !important;
+}
+
+/*-----------------------------------------------------Footer-------------------------------------*/ 
+.footerDecr {
+margin-top: 90px;
+font-family: Lato-regular;
+font-size: 14px;
+color: #999999;
+font-weight: normal;
+}
+
+footer p {
+font-family: montserrat-bold;
+font-size: 16px;
+color: #ffffff;
+font-weight: normal;
+}
+
+footer ul  {
+margin-top: 40px;
+padding: 0;
+}
+
+footer ul li {
+list-style-type: none;
+font-family: Lato-regular;
+font-size: 14px;
+color: #999999;
+font-weight: normal;
+}
+footer ul li a{
+color: #999999;
+text-decoration: none;
+}
+footer ul li a::before{
+content: "— ";
+}
+footer ul li a:hover {
+color: #ffffff;
+text-decoration: none;
+}
+
+footer ul li:hover {
+color: #ffffff;
+cursor: pointer;
+
+}
+footer .textwidget p {
+    margin-top: 90px;
+    font-family: Lato-regular;
+    font-size: 14px;
+    color: #999999;
+    font-weight: normal;
+}
+
+footer .container{
+    position: relative;
+}
+footer .logo{
+    position: absolute;
+    left: 15px;
+    z-index: 1;
+}
+footer .row .col-lg-3:first-child{
+    padding-top: 90px;
+}
+/*----------------------------------------------------------------- sidebar-blog-------------------------------------------------------- */
+.Blogcategories ul li::before {
+    content: "—";
+    margin-right: 5px;
+}
+.Blogcategories ul li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/*------------------------------------------------------------------ portfilio-----------------------------------------------------------*/
+.load-more{
+    text-align: center !important;
+}
+.tag-portfolio{
+    text-align: center;
+}
+.portfolio-category{
+    margin-bottom: 45px;
+}
+.portfolio-category .OurtemThuminfo {
+    font-style: normal;
+}
+.portfolio-category img {
+    height: 200px;
+    width: 100%;
+}
+.portfolio-category--single img{
+    width: 100%;
+    height: 565px;
+}
+.port-cate-name{
+    margin-top: 15px;
+}
+.tag-portfolio{
+    margin: 100px 0 50px;
+}
+.tag-portfolio span {
+    color: #36392e;
+    font-family: montserrat-600;
+    font-size: 14px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.portfolio-description{
+    margin: 35px 0 ;
+    display: block;
+}
+.active-portfolio{
+    color: #50bfcf !important;
+    text-decoration: line-through;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+.single-portfolio__category{
+    margin-top: 100px;
+    text-align: center;
+}
+.single-portfolio__category span{
+    text-transform: uppercase;
+    color: #36392e;
+    font-family: Lato-regular;
+}
+.single-portfilio__content {
+    margin-bottom: 55px;
+}
+
+.pagination{
+    margin: 10px 0 45px
+}
+.pagination a {
+    color: #36392e;
+    font-family: Lato-regular;
+
+}
+.ion-ios-keypad-outline::before {
+    color: #36392e;
+    margin: 0 15px;
+}
+
+.single-portfolio__clientinfo ul {
+    padding: 0;
+    list-style-type: none;
+}
+.single-portfolio__clientinfo ul li{
+    margin-bottom: 10px;
+}
+.single-portfolio__clientinfo {
+    display: flex;
+}
+.single-portfolio__clientinfo #client__data{
+    flex-grow: 1;
+    margin-left: 30px;
+}
+
+.single-portfolio__related-post {
+    display: flex;
+}
+.single-portfolio__related-post article {
+    width: 25%;
+}
+.single-portfolio__related-post article img {
+    height: 100%;
+    width: 100%;
+}
+.ImgExpertHover {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.ImgExpertHover:hover > .ExpertTagHover {
+    display: block;
+}
+
+.testimonial-brg{
+    margin: 100px 0;
+    padding: 50px 0;
+    background-position: center;
+    background-size: cover;
+    background-image: url('../Alice_Theme_Lab/disc/images/testimonialBrg.jpg');
+}
+.ion-quote, .Comment p, .Comment span, .Cmtname, .CmtAdd {
+    color: #ffffff !important;
+}
+.qouteDescript p {
+    color: #d1d1cf;
+}
+
+
+/*------------------------------------------------------------------ service-----------------------------------------------------------*/
+
+.service--grid{
+    text-align: left;
+}
+.service__readmore {
+    font-family: Lato-700;
+    font-size: 12px;
+    color: #238ee1;
+    margin: 0 0 50px;
+}
+
+.single-service-content{
+    margin:100px 0;
+    width: 100%;
+}
+.single-service-content > img {
+    width: 100%;
+    height: 300px;
+}
+.type-service{
+    width: 100%;
+}
+.alignright{
+    float: right;
+}
+
+.single-service__description span {
+    color: #36392e;
+    font-size: 16px;
+    font-family: montserrat-bold;
+    margin: 20px 0;
+    display: block;
+}
+.single-service__description p, .single-service__description li {
+    font-size: 14px;
+    color: #b6b6b6;
+    font-family: Lato-regular;
+}
+.widget_my-service-tittle {
+    list-style-type: none;
+}
+.service-sidebar__area {
+    margin: 100px 0;
+}
+.service-sidebar__tittle {
+    color: #36392e;
+    font-size: 16px;
+    font-family: montserrat-bold;
+    display: inline-block;
+    border-top: 2px solid #36392e;
+    padding: 10px 0;
+}
+.service-tittles p {
+    list-style-type: none;
+    font-family: Lato-regular;
+    font-size: 14px;
+    color: #999999;
+    margin-bottom: 5px;
+}
+.service-tittles p::before {
+    content: "—";
+    margin-right: 5px;
+}
