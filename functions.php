@@ -480,7 +480,19 @@ function Footer_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'Footer_customize_register' );
 
-///----------------------------------------------------------------------------------------Register Widget--------------------------------------
+///----------------------------------------------------------------------------------------Load mini cart--------------------------------------
+
+/*Woocommerce minicart*/
+add_filter('woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment');
+function woocommerce_header_add_to_cart_fragment( $fragments ) {
+	global $woocommerce;
+	ob_start();
+	?>
+	<span class="cart-contents"><?php echo $woocommerce->cart->cart_contents_count;?> </span>
+	<?php
+	$fragments['span.cart-contents'] = ob_get_clean();
+	return $fragments;
+}
 
 
 

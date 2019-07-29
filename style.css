@@ -345,10 +345,6 @@ z-index: 1 !important;
 
 /*---------------------------------------------------------------- shoptify--------------------------------------------------------- */
 
-.products li img {
-    height: 300px !important;
-}
-
 .woocommerce ul.products li.product .button {
     visibility: hidden;
     font-family: Lato-regular !important;
@@ -447,7 +443,7 @@ ins {
 }
 .woocommerce-product-details__short-description {
     font-family: Lato-regular !important;
-    color: #dcdcdc !important;
+    color: #999999 !important;
 }
 .tabs .active {
     z-index: 1 !important;
@@ -473,7 +469,7 @@ ins {
     border-radius: 4px;
     color: #999999;
 }
-.quantity__area button:hover {
+#add:hover,#sub:hover {
     background-color: #52c315;
     border: none;
     color: #ffffff;
@@ -506,4 +502,53 @@ ins {
 .woocommerce-Price-amount {
     font-family: Lato-regular;
     font-size: 18px;
+}
+.cart-contents {
+    top: 41px;
+    right: -7px;
+    line-height: 15px;
+    text-align: center;
+    border-radius: 3px;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    display: block;
+    background-color: #238ee1;
+    font-family: montserrat-regular;
+    font-size: 10px;
+    color: #f3f3f3;
+    font-weight: normal;
+}
+
+.variations {
+    margin-top: 30px;
+    
+}
+.variations td select {
+    border-radius: 4px;
+    color: #999999;
+
+}
+.woocommerce-variation-availability {
+    margin-bottom: 30px
+}
+.woocommerce-variation-add-to-cart .quantity {
+    float: left !important;
+    margin-left: 3px !important;
+    height: 41px;
+}
+.woocommerce-variation-add-to-cart button:not(.single_add_to_cart_button) {
+    width: 41px;
+    border: 2px #dcdcdc solid;
+    background-color: transparent;
+    border-radius: 4px;
+    color: #999999;
+    float: left;
+    height: 41px;
+}
+.woocommerce-variation-add-to-cart .single_add_to_cart_button {
+    margin-left: 50px !important;
+}
+.related .woocommerce-loop-product__title {
+    color: #ffffff;
 }

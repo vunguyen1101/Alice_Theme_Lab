@@ -43,7 +43,10 @@
                 <?php alice_menu('DeskTopNav'); ?>
                 <div class="bagContainer">
                     <div class="headerDot">.</div>
-                    <a  href="<?php echo wc_get_cart_url(); ?>" class="Deskbag ion-bag"><span><?php echo WC()->cart->get_cart_contents_count()?></span></a>
+                    <?php global $woocommerce; ?>
+                    <a href="<?php echo wc_get_cart_url(); ?>" class="Deskbag ion-bag">         
+                        <span class="cart-contents"><?php echo $woocommerce->cart->cart_contents_count; ?></span>
+                    </a>
                     <div class="SearchDesk ion-ios-search"></div>
                 </div>
                 <form role="search" method="get" class="search-form" action="http://localhost:8080/alicemaid/">  
