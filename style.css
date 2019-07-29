@@ -387,6 +387,7 @@ ins {
 
 .woocommerce-ordering {
     float: left !important;
+    margin-left: 20px !important;
 }
 .upontheloop {
     text-align: right;
