@@ -349,18 +349,18 @@ z-index: 1 !important;
     height: 300px !important;
 }
 
-.add_to_cart_button {
+.woocommerce ul.products li.product .button {
     visibility: hidden;
-    font-family: Lato-regular;
-    color: #ffffff;
-    display: inline-block;
-    margin-left: 10px;
-    padding: 5px 10px;
-    border-radius: 5px;
-    background-color: #238ee1;
+    font-family: Lato-regular !important;
+    color: #ffffff !important;
+    display: inline-block !important;
+    margin-left: 10px !important;
+    padding: 5px 10px !important;
+    border-radius: 5px !important;
+    background-color: #238ee1 !important;
 }
-.products li:hover > .add_to_cart_button {
-    visibility: visible;
+.products li:hover > .button {
+    visibility: visible !important;
 }
 .products div a:last-child:not(.add_to_cart_button) {
     color: #cf7750;
