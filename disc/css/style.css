@@ -349,9 +349,10 @@ header {
 
 .Deskbag {
   position: relative;
+  text-decoration: none;
+  color: #212529;
 }
-
-.Deskbag::after {
+.Deskbag span {
   top: 41px;
   right: -7px;
   line-height: 15px;
@@ -361,7 +362,6 @@ header {
   width: 15px;
   height: 15px;
   display: block;
-  content: "2";
   background-color: #238ee1;
   font-family: montserrat-regular;
   font-size: 10px;

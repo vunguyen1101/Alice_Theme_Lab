@@ -33,10 +33,12 @@
     <div class="row">
 
       <?php
+      $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
       $args = array(
         'post_type'   => 'portfolio',
         'post_status' => 'publish',
         'posts_per_page' => 12,
+        'paged'          => $paged
       );
       
       $portfolio = new WP_Query( $args );
@@ -47,13 +49,12 @@
           while( $portfolio->have_posts() ) :
             $portfolio->the_post();
             get_template_part( 'template-parts/content/content','portfolio' );
-        ?>
-
-        <?php
+            
           endwhile;
           wp_reset_postdata();
+
         ?>
- 
+
       <?php
       else :
         esc_html_e( 'No testimonials in the diving taxonomy!', 'alice' );
@@ -106,5 +107,5 @@
     </div>
   </div>
 </section>
-
+    
 <?php get_footer( ); ?>

@@ -94,6 +94,20 @@ $("a[href^='#']").click(function(e) {
 });
 
 
+///Quantity cart
+$('#add').click(function () {
+  if ($('.quantity .input-text').val() < 999) {
+  $('.quantity .input-text').val(+$('.quantity .input-text').val() + 1);
+  }
+  });
+  $('#sub').click(function () {
+    if ($('.quantity .input-text').val() > 1) {
+    if ($('.quantity .input-text').val() > 1) $('.quantity .input-text').val(+$('.quantity .input-text').val() - 1);
+    }
+  });
+
+
+
 // blog/ quanity
 
 $('#add').click(function () {

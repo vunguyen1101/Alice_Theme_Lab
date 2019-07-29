@@ -33,7 +33,9 @@ get_header();
 
         <div class="row">
             <div class="col-lg-3 col-sm-6">
-                sidebar
+                <div class="service-sidebar__area">
+                <?php dynamic_sidebar('service-sidebar' ) ?>
+                </div>
             </div>
             <div class="col-lg-9 col-sm-6">
                 <div class="row">

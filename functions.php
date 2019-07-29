@@ -73,15 +73,31 @@ if ( ! function_exists( 'alice_setup' ) ) :
 			)
 		);
 
+		add_theme_support( 'woocommerce' );
+
 
 	}
 endif;
 add_action( 'after_setup_theme', 'alice_setup' );
 
-
-
 ////-----------------------------------------------------------------------------------------PAGINATION---------------------------------------------------------------------------------
 
+function pagination_bar( $custom_query ) {
+
+    $total_pages = $custom_query->max_num_pages;
+    $big = 999999999; // need an unlikely integer
+
+    if ($total_pages > 1){
+        $current_page = max(1, get_query_var('paged'));
+
+        echo paginate_links(array(
+            'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+            'format' => '?paged=%#%',
+            'current' => $current_page,
+            'total' => $total_pages,
+        ));
+    }
+}
 
 
 
@@ -507,6 +523,7 @@ function bac_PostViews($post_ID) {
     }
 }
 
+
 ////-----------------------------------------------------------------------------------------//load stylesheet----------------------------------------------------------------------------------
 
 function load_stylesheet()
@@ -577,3 +594,23 @@ add_action('wp_enqueue_scripts', 'include_jquery');
 
 
 
+////-----------------------------------------------------------------------------------------remove action----------------------------------------------------------------------------------
+
+
+function remove_coupon_text() {
+	remove_action('woocommerce_before_main_content','woocommerce_breadcrumb',20);
+	remove_action('woocommerce_after_single_product_summary','woocommerce_output_related_products',20);
+} 
+add_action('init','remove_coupon_text');
+
+////-----------------------------------------------------------------------------------------add plus minus button----------------------------------------------------------------------------------
+
+add_action( 'woocommerce_before_add_to_cart_quantity', 'bbloomer_display_quantity_plus' );
+function bbloomer_display_quantity_plus() {
+   echo '<button type="button" id="sub" class="fa fa-caret-down"></button>';
+}
+ 
+add_action( 'woocommerce_after_add_to_cart_quantity', 'bbloomer_display_quantity_minus' );
+function bbloomer_display_quantity_minus() {
+   echo '<button type="button" id="add" class="fa fa-caret-up"></button>';
+}

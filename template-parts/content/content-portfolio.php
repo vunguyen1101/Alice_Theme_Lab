@@ -1,5 +1,5 @@
 
-<?php if(is_page()) : ?>
+<?php if(is_page()||is_archive()) : ?>
 <div class="col-lg-3 col-sm-6 <?php $categories = get_the_category();
     if ( ! empty( $categories ) ) {
         echo esc_html( $categories[0]->slug );   
@@ -11,7 +11,7 @@
 <?php endif ?>
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <a class="asideBlogger" href="<?php the_permalink( );?>" >
-            <?php if(is_page()) : ?>
+            <?php if(is_page()||is_archive()) : ?>
             <div class="portfolio-category">
             <?php else : ?>
             <div class="portfolio-category--single">
@@ -21,7 +21,7 @@
                     the_post_thumbnail();
                 }
                 ?>
-                <?php if(is_page()) : ?>
+                <?php if(is_page()||is_archive()) : ?>
                        
                 <div class="NameExpert OURBlogTagName port-cate-name"><?php the_title(); ?></div>
                 <div class="OurtemThuminfo">
@@ -79,7 +79,7 @@
         </a>
 
     </article><!-- #post-<?php the_ID(); ?> -->
-<?php if(is_page()) : ?>
+<?php if(is_page()||is_archive()) : ?>
 </div>
 <?php endif ?>
 
