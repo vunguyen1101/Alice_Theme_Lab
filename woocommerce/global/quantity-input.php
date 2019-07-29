@@ -30,7 +30,7 @@ if ( $max_value && $min_value === $max_value ) {
 	<div class="quantity">
 		<label class="screen-reader-text" for="<?php echo esc_attr( $input_id ); ?>"><?php echo esc_attr( $label ); ?></label>
 		<input
-			type="text"
+			type="number"
 			id="<?php echo esc_attr( $input_id ); ?>"
 			class="<?php echo esc_attr( join( ' ', (array) $classes ) ); ?>"
 			step="<?php echo esc_attr( $step ); ?>"

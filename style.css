@@ -399,6 +399,7 @@ ins {
     border: 1px solid #d3ced2 !important;
     width: 30px !important;
     border-radius: 4px !important;
+    margin-left: 3px;
 }
 .page-numbers {
     border: none !important;
