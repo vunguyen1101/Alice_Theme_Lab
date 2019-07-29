@@ -79,7 +79,7 @@ get_header( 'shop' );
 		woocommerce_product_loop_end();
 
 		?>
-		<div class="upontheloop">
+		<div class="upontheloop beneaththeloop">
 		<?php
 		do_action( 'woocommerce_before_shop_loop' );
 		woocommerce_pagination()

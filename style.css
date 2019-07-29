@@ -392,6 +392,9 @@ ins {
     text-align: right;
     margin: 100px 0 50px;
 }
+.beneaththeloop {
+    margin: 0 0 50px;
+}
 .woocommerce nav.woocommerce-pagination ul li {
     border: 1px solid #d3ced2 !important;
     width: 30px !important;
