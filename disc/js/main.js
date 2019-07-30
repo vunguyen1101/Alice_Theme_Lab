@@ -1,16 +1,31 @@
 $(document).ready(function(){
-    var content=$("#portfolio-content .container .row"),tabs=$(".tag-portfolio span");
-    tabs.on('click', function(){
-  
-      tabs.removeClass('active-portfolio').filter(this).addClass('active-portfolio');
-      var filter=$(this).data('filter');
-      
-      content.isotope({
-        filter: filter
-      });
-      return false;
+  var content=$("#portfolio-content .container .row"),tabs=$(".tag-portfolio span");
+  tabs.on('click', function(){
+
+    tabs.removeClass('active-portfolio').filter(this).addClass('active-portfolio');
+    var filter=$(this).data('filter');
+    
+    content.isotope({
+      filter: filter
     });
+    return false;
   });
+
+
+
+
+  // woocommerce-product-gallery__wrapper 
+
+  // $('.woocommerce-product-gallery__wrapper').lightSlider({
+  //     gallery: true,
+  //     item: 1,
+  //     loop:true,
+  //     slideMargin: 0,
+  //     thumbItem: 9
+  // });
+
+
+});
 
 
   // carousel COmment
@@ -82,18 +97,6 @@ $(document).ready(function(){
     ]
   });
   
-//scroll to section
-$("a[href^='#']").click(function(e) {
-	e.preventDefault();
-	
-	var position = $($(this).attr("href")).offset().top;
-
-	$("body, html").animate({
-		scrollTop: position
-	},1500);
-});
-
-
 ///Quantity cart
 $('#add').click(function () {
   if ($('.quantity .input-text').val() < 999) {
@@ -151,8 +154,9 @@ jQuery(document).ready(function($){
   
   });
   
-  });
+});
 
 
 
 
+  /* wait for images to load */

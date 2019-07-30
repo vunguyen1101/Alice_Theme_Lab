@@ -80,10 +80,12 @@
 		do_action( 'woocommerce_after_single_product_summary' );
 		?>
 	</div>
+
 </div>
 <div class="single-portfolio__related-brg">
 	<div class="container">
 	<?php woocommerce_output_related_products (); ?>
+
 	</div>
 </div>
 <?php do_action( 'woocommerce_after_single_product' ); ?>

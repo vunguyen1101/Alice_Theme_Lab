@@ -441,7 +441,7 @@ ins {
     font-family: Lato-700 !important;
     color: #dcdcdc !important;
 }
-.woocommerce-product-details__short-description {
+.woocommerce-product-details__short-description, .woocommerce-Tabs-panel--description {
     font-family: Lato-regular !important;
     color: #999999 !important;
 }
@@ -551,4 +551,19 @@ ins {
 }
 .related .woocommerce-loop-product__title {
     color: #ffffff;
+}
+.woocommerce div.product div.images.woocommerce-product-gallery {
+    width: 100%;
+}
+.woocommerce-product-gallery__wrapper .active {
+    max-width: 600px;
+}
+.flex-control-thumbs {
+    margin-top: 10px !important;
+}
+.woocommerce div.product div.images img {
+    width: unset;
+}
+.woocommerce-product-gallery__trigger {
+    z-index: 1;
 }
