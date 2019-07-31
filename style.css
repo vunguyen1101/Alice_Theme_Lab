@@ -565,5 +565,5 @@ ins {
     width: unset;
 }
 .woocommerce-product-gallery__trigger {
-    z-index: 1;
+    z-index: 1 !important;
 }

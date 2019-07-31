@@ -72,8 +72,12 @@ if ( ! function_exists( 'alice_setup' ) ) :
 	
 			)
 		);
-
+		
+		//woocommerce support
 		add_theme_support( 'woocommerce' );
+		add_theme_support( 'wc-product-gallery-zoom' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
+		add_theme_support( 'wc-product-gallery-slider' );
 
 
 	}
@@ -495,13 +499,11 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 }
 
 
-add_action( 'after_setup_theme', 'yourtheme_setup' );
+// add_action( 'after_setup_theme', 'yourtheme_setup' );
 
-function yourtheme_setup() {
-add_theme_support( 'wc-product-gallery-zoom' );
-add_theme_support( 'wc-product-gallery-lightbox' );
-add_theme_support( 'wc-product-gallery-slider' );
-}
+// function yourtheme_setup() {
+
+// }
 
 ////-----------------------------------------------------------------------------------------Post view count----------------------------------------------------------------------------------
 
