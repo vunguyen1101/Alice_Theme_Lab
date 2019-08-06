@@ -119,7 +119,7 @@ class Elementor_Test_Widget extends \Elementor\Widget_Base {
 			);
 			$my_query = new WP_Query($args); 
 				if ($my_query->have_posts()) : 
-				echo '<span data-filter=".'.$cat->slug.'">'.$cat->name.'</span>';
+				echo '<span data-filter=".'.$cat->slug.'">'.$cat->name.' CLEANING</span>';
 				endif; 
 			endforeach;
 			
