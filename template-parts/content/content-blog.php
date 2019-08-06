@@ -16,37 +16,37 @@
             ?>
             <div class="NameExpert OURBlogTagName"><?php the_title(); ?></div>
             <div class="OurtemThuminfo">
-                    <span><i class="ion-android-person"></i> <?php the_author(); ?></span>
-                    <span><i class="ion-calendar"></i> <?php the_date(); ?></span>
-                </div>
-                <div class="BlogDecript AsideDscrpt">
-                    <?php
-                    if ( ! is_single() && ! is_page() ) :
-                        the_excerpt();
-                    else :
-                        the_content(
-                            sprintf(
-                                wp_kses(
-                                    /* translators: %s: Name of current post. Only visible to screen readers */
-                                    __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'alice' ),
-                                    array(
-                                        'span' => array(
-                                            'class' => array(),
-                                        ),
-                                    )
-                                ),
-                                get_the_title()
-                            )
-                        );
-                        wp_link_pages(
-                            array(
-                                'before' => '<div class="page-links">' . __( 'Pages:', 'alice' ),
-                                'after'  => '</div>',
-                            )
-                        );
-                    endif;
-                    ?>
-                </div>
+                <span><i class="ion-android-person"></i> <?php the_author(); ?></span>
+                <span><i class="ion-calendar"></i> <?php the_date(); ?></span>
+            </div>
+            <div class="BlogDecript AsideDscrpt">
+                <?php
+                if ( ! is_single() && ! is_page() ) :
+                    the_excerpt();
+                else :
+                    the_content(
+                        sprintf(
+                            wp_kses(
+                                /* translators: %s: Name of current post. Only visible to screen readers */
+                                __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'alice' ),
+                                array(
+                                    'span' => array(
+                                        'class' => array(),
+                                    ),
+                                )
+                            ),
+                            get_the_title()
+                        )
+                    );
+                    wp_link_pages(
+                        array(
+                            'before' => '<div class="page-links">' . __( 'Pages:', 'alice' ),
+                            'after'  => '</div>',
+                        )
+                    );
+                endif;
+                ?>
+            </div>
         </div>
     </a>
     <?php

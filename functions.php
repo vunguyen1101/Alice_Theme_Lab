@@ -28,6 +28,7 @@ if ( ! function_exists( 'alice_setup' ) ) :
 		add_theme_support( 'custom-background' );
 		
 		add_theme_support( 'post-thumbnails' );
+		add_image_size( 'portfolio_thumb', 270, 200, true);
 		set_post_thumbnail_size( 1568, 9999 );
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus(
@@ -83,6 +84,8 @@ if ( ! function_exists( 'alice_setup' ) ) :
 	}
 endif;
 add_action( 'after_setup_theme', 'alice_setup' );
+
+require_once get_template_directory(  ).'/widgets/my-widgets.php';
 
 ////-----------------------------------------------------------------------------------------PAGINATION---------------------------------------------------------------------------------
 
@@ -241,7 +244,7 @@ function Create_custom_post_type()
 		'capability_type' => 'post' //
 	);
 	register_post_type('portfolio', $args2);
-
+	
 	///------------------------------------------------------------------------------ Testimonials ------------------------------------------------
 	$label3 = array(
 		'name' => 'Testimonials', //Tên post type dạng số nhiều
@@ -276,10 +279,46 @@ function Create_custom_post_type()
 		'capability_type' => 'post' //
 	);
 	register_post_type('testimonials', $args3);
+
+
+
+	///------------------------------------------------------------------------------ Staffs ------------------------------------------------
+	$label4 = array(
+		'name' => 'Staffs', //Tên post type dạng số nhiều
+		'singular_name' => 'Staff' //Tên post type dạng số ít
+	);
+	$args4 = array(
+		'labels' => $label4, //Gọi các label trong biến $label ở trên
+		'description' => 'Expert Staffs', //Mô tả của post type
+		'supports' => array(
+			'title',
+			'editor',
+			'excerpt',
+			'author',
+			'thumbnail',
+			'comments',
+			'revisions',
+			'custom-fields'
+		), //Các tính năng được hỗ trợ trong post type
+		'taxonomies' => array( 'category', 'post_tag' ), //Các taxonomy được phép sử dụng để phân loại nội dung
+		'hierarchical' => false, //Cho phép phân cấp, nếu là false thì post type này giống như Post, true thì giống như Page
+		'public' => true, //Kích hoạt post type
+		'show_ui' => true, //Hiển thị khung quản trị như Post/Page
+		'show_in_menu' => true, //Hiển thị trên Admin Menu (tay trái)
+		'show_in_nav_menus' => true, //Hiển thị trong Appearance -> Menus
+		'show_in_admin_bar' => true, //Hiển thị trên thanh Admin bar màu đen.
+		'menu_position' => 5, //Thứ tự vị trí hiển thị trong menu (tay trái)
+		'menu_icon' => 'dashicons-groups', //Đường dẫn tới icon sẽ hiển thị
+		'can_export' => true, //Có thể export nội dung bằng Tools -> Export
+		'has_archive' => true, //Cho phép lưu trữ (month, date, year)
+		'exclude_from_search' => false, //Loại bỏ khỏi kết quả tìm kiếm
+		'publicly_queryable' => true, //Hiển thị các tham số trong query, phải đặt true
+		'capability_type' => 'post' //
+	);
+	register_post_type('staffs', $args4);
 }
 /* Kích hoạt hàm tạo custom post type */
 add_action('init', 'Create_custom_post_type');
-
 
 //--------------------------------------------------------------------------------Register and load the Custom widget-----------------------------------------------------------------
 
@@ -499,12 +538,6 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 }
 
 
-// add_action( 'after_setup_theme', 'yourtheme_setup' );
-
-// function yourtheme_setup() {
-
-// }
-
 ////-----------------------------------------------------------------------------------------Post view count----------------------------------------------------------------------------------
 
 function bac_PostViews($post_ID) {
@@ -640,3 +673,5 @@ add_action( 'woocommerce_after_add_to_cart_quantity', 'bbloomer_display_quantity
 function bbloomer_display_quantity_minus() {
    echo '<button type="button" id="add" class="fa fa-caret-up"></button>';
 }
+
+

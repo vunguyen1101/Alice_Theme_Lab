@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
   var content=$("#portfolio-content .container .row"),tabs=$(".tag-portfolio span");
   tabs.on('click', function(){
 
@@ -25,12 +26,44 @@ $(document).ready(function(){
   // });
 
 
+  $(' .tagProject span:first-child ').addClass('active');
+
+
 });
+
+$(document).ready(function(){
+
+// init Isotope
+
+  var content=$(".ProjectImg"),tabs=$(".tagProject span");
+
+  content.isotope({
+    filter: '.carpet',
+  });
+  
+  tabs.on('click', function(){
+
+    tabs.removeClass('active').filter(this).addClass('active');
+    var filter=$(this).data('filter');
+    
+    content.isotope({
+      filter: filter,
+    });
+    return false;
+  });
+
+
+///test
+
+});
+
+
 
 
   // carousel COmment
   
   $(document).ready(function(){
+    ////  present in home portfilio page
     $('.CommentCaousel').slick({
       dots: true,
       nextArrow: false,
@@ -42,6 +75,14 @@ $(document).ready(function(){
       prevArrow: false,
       autoplay:true
     });
+
+    $('.testi-homedisplay').slick({
+      dots: true,
+      nextArrow: false,
+      prevArrow: false
+    });
+    
+   
   });
 
 /////event for hamburger
@@ -155,8 +196,5 @@ jQuery(document).ready(function($){
   });
   
 });
-
-
-
 
   /* wait for images to load */

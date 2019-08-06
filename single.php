@@ -55,9 +55,6 @@ get_header();
         </div>
     </div>
 </section>
-<?php if(function_exists('bac_PostViews')) { 
-    echo bac_PostViews(get_the_ID()); 
-}?>
 
 <?php
 get_footer();

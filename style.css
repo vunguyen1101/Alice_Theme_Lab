@@ -417,7 +417,7 @@ ins {
 }
 .wp-post-image {
     width: 100%;
-    height: auto;
+    height: 300px;
 }
 .product_title {
     font-family: montserrat-600 !important;
@@ -566,4 +566,75 @@ ins {
 }
 .woocommerce-product-gallery__trigger {
     z-index: 1 !important;
+}
+/*---------------------------------------------------------------------------------- elmentor */
+.homebtn {
+    width: 100% !important;
+    margin: 15px 0 0 !important;
+}
+#schedule-btn {
+    color: #999999 !important;
+}
+
+.tagProject {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.tagProject span {
+    height: 30px;
+    line-height: 27px;
+    cursor: pointer;
+    border-radius: 30px;
+    padding: 0px 15px;
+    display: inline-block;
+    font-family: montserrat-regular;
+    font-size: 12px;
+    color: #ffffff;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+.ProjectImg div img {
+    width: 100%;
+}
+@media (max-width: 767px) {
+    .ProjectImg div {
+      width: 50%;
+    }
+  }
+.ProjectImg {
+    display: flex;
+}
+.ProjectImg div:hover .ExpertTagHover {
+    display: block;
+    transition: 2s;
+}
+
+.elementor-widget-container .Carouselitem {
+    text-align: center;
+}
+.elementor-widget-container .Carouselitem .AcountInfo .Cmtname {
+    color: #36392e !important;
+}
+.elementor-widget-container .Carouselitem .AcountInfo .CmtAdd {
+    color: #999999 !important;
+}
+.elementor-widget-blog-display .ExpertTag img {
+    height: 200px !important;
+}
+.elementor hr {
+    margin: 1em auto !important;
+}
+.socialNet span a {
+    color: #36392e;
+}
+
+.slick-arrow {
+    top: 400px !important;
+}
+.VIewallstaff {
+    top: 375px;
+    
+}
+.VIewallstaff span a {
+    color: #999999;
 }
