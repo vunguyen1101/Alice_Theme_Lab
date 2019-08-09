@@ -573,6 +573,9 @@ ins {
     color: #999999 !important;
 }
 
+.elementor-icon .eci {
+    font-size: 72px;
+}
 .tagProject {
     text-align: center;
     margin-bottom: 50px;
