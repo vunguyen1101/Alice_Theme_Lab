@@ -18,7 +18,7 @@
                         $search_keyword = esc_html( $s, 1);
                         $search_count = $search_query->post_count;
                         // var_dump( $search_query );
-                        printf( __('<h1>Search results for <strong>" %1$s " </strong>. We found <strong>%2$s</strong> articles for you.</h1>', 'cherry'), $search_keyword, $search_count );
+                        printf( __('<p>Search results for <strong>" %1$s " </strong>. We found <strong>%2$s</strong> articles for you.</p>', 'alice'), $search_keyword, $search_count );
                 ?>
         </div>
         
@@ -28,7 +28,10 @@
             // Load posts loop.
             while ( have_posts() ) {
                 the_post();
-                get_template_part( 'template-parts/content/content','portfolio' );
+            
+                ?><h2><?php  the_title(); ?></h2><a href="<?php the_permalink(); ?>"> - Access to...</a><?php
+                ?><br><?php
+                
             }
         } else {
 

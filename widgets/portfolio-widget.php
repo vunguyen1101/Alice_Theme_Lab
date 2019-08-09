@@ -75,7 +75,6 @@ class Elementor_Test_Widget extends \Elementor\Widget_Base {
 	 */
 	protected function _register_controls() {
 
-		
 		$this->start_controls_section(
 			'content_tab',
 			[
@@ -86,14 +85,42 @@ class Elementor_Test_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'portfolio-post-amount',
 			[
-				'label' => __( 'Number of posts', 'plugin-name' ),
+				'label' => __( 'Number of posts', 'alice' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'input_type' => 'number',
 				'default' => 15
 			]
 		);
+		$this->end_controls_section();
 
+		
+		$this->start_controls_section(
+			'content_section',
+			[
+				'label' => __( 'Apperance Categories', 'alice' ),
+				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+			]
+		);
 
+		$this->add_control(
+			'show_elements',
+			[
+				'label' => __( 'Show Categories', 'alice' ),
+				'type' => \Elementor\Controls_Manager::SELECT2,
+				'multiple' => true,
+				'options' => cateList(),
+				// [
+				// 	'carpet'  => __( 'Carpet', 'alice' ),
+				// 	'construction ' => __( 'Construction ', 'alice' ),
+				// 	'house' => __( 'House', 'alice' ),
+				// 	'move-in-out' => __( 'Move-in-out', 'alice' ),
+				// ],
+				'default' => [ 'carpet', 'description' ],
+			]
+		);
+
+		$this->end_controls_section();
+		
 	}
 
 	/**
@@ -109,20 +136,10 @@ class Elementor_Test_Widget extends \Elementor\Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		echo '<div class="tagProject">';
-	
-			$cats = get_categories('child_of='.get_query_var('cat')); 
-			foreach ($cats as $cat) :
-		
-			$args = array(
-			'post_type'   => 'portfolio',
-			'category__in' => array($cat->term_id)
-			);
-			$my_query = new WP_Query($args); 
-				if ($my_query->have_posts()) : 
-				echo '<span data-filter=".'.$cat->slug.'">'.$cat->name.' CLEANING</span>';
-				endif; 
-			endforeach;
+			foreach ( $settings['show_elements'] as $element ) {
 			
+				echo '<span data-filter=".'.$element.'">' .$element.' CLEANING</span>'; 
+			}	
 		echo '</div>';
 
 
@@ -169,4 +186,24 @@ class Elementor_Test_Widget extends \Elementor\Widget_Base {
 
 	}
 
+
+}
+function cateList(){
+	$cats = get_categories('child_of='.get_query_var('portfolio'));
+	$cate_list = array(); 
+	foreach ($cats as $cat) :
+	$args = array(
+	'post_type'   => 'portfolio',
+	'category__in' => array($cat->term_id)
+	);
+
+	$my_query = new WP_Query($args); 
+	
+	if ($my_query->have_posts()  ):
+		$cate_list[$cat->slug] = $cat->name;
+
+	endif;
+	endforeach;
+
+	return $cate_list;
 }

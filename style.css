@@ -415,10 +415,7 @@ ins {
 .content-area {
     margin: 100px 0 0;
 }
-.wp-post-image {
-    width: 100%;
-    height: 300px;
-}
+
 .product_title {
     font-family: montserrat-600 !important;
     color: #36392e !important;
@@ -637,4 +634,30 @@ ins {
 }
 .VIewallstaff span a {
     color: #999999;
+}
+
+/* -------------------------------- contact form ---------------------------------------- */
+.searchBar .ajax-loader {
+    display: none !important;
+}
+.searchBar .wpcf7-form-control-wrap {
+    display: block;
+    width: 70%;
+}
+.searchBar .wpcf7-form-control-wrap input {
+    display: block;
+    width: 100%;
+}
+.searchBar .wpcf7-submit {
+    background-color: #52c315;
+    border-radius: 60px;
+    display: block;
+    width: 180px;
+    font-family: montserrat-600;
+    font-size: 18px;
+    color: #ffffff;
+}
+.wpcf7-response-output {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
 }

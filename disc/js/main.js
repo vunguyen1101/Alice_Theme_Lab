@@ -25,7 +25,7 @@ $(document).ready(function(){
   //     thumbItem: 9
   // });
 
-
+  
   $(' .tagProject span:first-child ').addClass('active');
 
 
@@ -37,8 +37,9 @@ $(document).ready(function(){
 
   var content=$(".ProjectImg"),tabs=$(".tagProject span");
 
+  var firstCateVal = $(".tagProject span:first-child").attr('data-filter');
   content.isotope({
-    filter: '.carpet',
+    filter: firstCateVal,
   });
   
   tabs.on('click', function(){
